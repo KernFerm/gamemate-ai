@@ -227,7 +227,7 @@ def main():
         print("⚠️  Optional dependencies not found (reduced functionality):")
         for package, install_cmd in optional_deps:
             print(f"   • {package}: {install_cmd}")
-        print("Install these for full MSI Gaming features.")
+        print("Install these for full GameMate Gaming features.")
     
     # Load configuration
     print("\n⚙️  Loading configuration...")
@@ -254,16 +254,16 @@ def main():
         if src_path not in sys.path:
             sys.path.insert(0, src_path)
         
-        # Load MSI Gaming Engine
+        # Load GameMate Engine
         engine_spec = importlib.util.spec_from_file_location(
             "gamemate_engine",
             str(script_dir / 'src' / 'core' / 'engine.py')
         )
         engine_module = importlib.util.module_from_spec(engine_spec)
         engine_spec.loader.exec_module(engine_module)
-        MSIGamingEngine = getattr(engine_module, 'MSIGamingEngine', None)
-        if MSIGamingEngine is None:
-            raise ImportError('GameMateAIEngine class not found in engine module')
+        GameMateEngine = getattr(engine_module, 'GameMateEngine', None)
+        if GameMateEngine is None:
+            raise ImportError('GameMateEngine class not found in engine module')
         
         # Load Overlay Manager with fallback
         try:
@@ -283,7 +283,7 @@ def main():
         print("✅ Core components imported")
         
         # Create engine instance
-        engine = MSIGamingEngine(config)
+        engine = GameMateEngine(config)
         print("✅ GameMate Engine created")
         
         # Create overlay manager
@@ -303,7 +303,7 @@ def main():
 ╚██████╔╝███████╗██║    ╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
  ╚═════╝ ╚══════╝╚═╝     ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
-        GameMate AI Assistant - READY FOR ACTION! 🎮
+        GameMate AI ASSISTANT - READY FOR ACTION! 🎮
         """)
         
         # Initialize and start engine
@@ -341,5 +341,4 @@ def main():
 
 if __name__ == "__main__":
     success = main()
-
     sys.exit(0 if success else 1)
