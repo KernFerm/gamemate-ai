@@ -263,7 +263,7 @@ def main():
         engine_spec.loader.exec_module(engine_module)
         MSIGamingEngine = getattr(engine_module, 'MSIGamingEngine', None)
         if MSIGamingEngine is None:
-            raise ImportError('MSIGamingEngine class not found in engine module')
+            raise ImportError('GameMateAIEngine class not found in engine module')
         
         # Load Overlay Manager with fallback
         try:
@@ -303,7 +303,7 @@ def main():
 ╚██████╔╝███████╗██║    ╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
  ╚═════╝ ╚══════╝╚═╝     ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
-        MSI GAMING AI ASSISTANT - READY FOR ACTION! 🎮
+        GameMate AI Assistant - READY FOR ACTION! 🎮
         """)
         
         # Initialize and start engine
@@ -320,10 +320,10 @@ def main():
             while engine.running:
                 time.sleep(0.1)
         except KeyboardInterrupt:
-            print("\n⏹️  Shutting down MSI Gaming AI Assistant...")
+            print("\n⏹️  Shutting down GameMate AI Assistant...")
         
     except KeyboardInterrupt:
-        print("\n⏹️  Shutting down MSI Gaming AI Assistant...")
+        print("\n⏹️  Shutting down GameMate AI Assistant...")
         try:
             engine.stop()
             overlay.cleanup()
@@ -341,4 +341,5 @@ def main():
 
 if __name__ == "__main__":
     success = main()
+
     sys.exit(0 if success else 1)
