@@ -125,20 +125,6 @@ Users are responsible for ensuring compliance with the terms of service of any a
 
 ---
 
-## Project Structure
-
-* `src/` — Core application logic and modules
-* `game_profiles/` — YAML profile configurations
-* `models/` — Optional AI models used for visual analysis
-* `scripts/` — Utility and helper scripts
-* `installer_support/` — Installer‑related resources
-* `logs/` — Runtime logs (local only)
-* `crash_reports/` — Crash diagnostics
-* `config.yaml` — Main configuration file
-* `README.md`, `SETUP.md`, `STATUS.md`, `PRODUCTION_READINESS.md` — Documentation
-
----
-
 ## Legal Notice
 
 This project is an independent, experimental, and educational software project.
