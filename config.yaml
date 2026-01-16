@@ -1,5 +1,5 @@
-# MSI MEG X AI Gaming Assistant Configuration
-# Hardware-optimized settings for MSI graphics cards
+# GameMate AI Configuration
+# Hardware-optimized settings for any graphics cards
 
 # MSI Hardware Settings
 gamemate:
@@ -13,8 +13,8 @@ gamemate:
 
 # General Settings
 general:
-  fps_limit: 120  # MSI optimized for high refresh rates
-  fps_limit: 120  # GameMate optimized for high refresh rates
+  fps_limit: 120  # GameMate AI optimized for high refresh rates
+  fps_limit: 120  # GameMate AI optimized for high refresh rates
   debug_mode: false
   auto_start: true
   gamemate_mode: true
@@ -49,7 +49,7 @@ features:
 # AI Tracker Settings (MSI Gaming Intelligence)
 ai_tracker:
   enabled: true
-  confidence_threshold: 0.3  # MSI optimized for gaming
+  confidence_threshold: 0.3  # GameMate AI optimized for gaming
   highlight_color: [0, 255, 255]  # MSI Cyan
   highlight_thickness: 2
   model: "gamemate_gaming_detector.onnx"  # GameMate custom model
@@ -72,7 +72,7 @@ ai_tracker:
   tracking_smoothing: 0.8
   prediction_frames: 3
 
-# AI Vision+ Settings (MSI Visual Enhancement Engine)
+# AI Vision+ Settings (GameMate AI Visual Enhancement Engine)
 ai_vision:
   enabled: true
   brightness_algorithm: "gamemate_adaptive"  # GameMate proprietary
@@ -203,3 +203,4 @@ ai_settings:
   input_resolution: [640, 640]
   use_tensorrt: false
   use_onnx: true
+
