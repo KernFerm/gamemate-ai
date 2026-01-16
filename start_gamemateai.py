@@ -237,7 +237,7 @@ def main():
         return False
     
     # Import and start the main application
-    print("\n🚀 Initializing MSI Gaming AI Assistant...")
+    print("\n🚀 Initializing GameMate AI Assistant...")
     
     # Check for active game profile from launcher
     active_profile = os.environ.get('GAMEMATE_ACTIVE_PROFILE', 'default')
@@ -291,7 +291,7 @@ def main():
         print("✅ Overlay manager ready")
         
         # Start the system
-        print("\n🎯 Starting MSI Gaming AI Assistant...")
+        print("\n🎯 Starting GameMate AI Assistant...")
         print("=" * 50)
         
         # Display startup banner
