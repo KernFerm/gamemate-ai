@@ -1,0 +1,205 @@
+# MSI MEG X AI Gaming Assistant Configuration
+# Hardware-optimized settings for MSI graphics cards
+
+# MSI Hardware Settings
+gamemate:
+  enabled: true
+  gpu_optimization: true
+  hardware_acceleration: true
+  dragon_center_integration: false
+  afterburner_sync: false
+  gamemate_mode: "gaming"
+  overclock_profile: "auto"
+
+# General Settings
+general:
+  fps_limit: 120  # MSI optimized for high refresh rates
+  fps_limit: 120  # GameMate optimized for high refresh rates
+  debug_mode: false
+  auto_start: true
+  gamemate_mode: true
+  hardware_acceleration: true
+  gpu_priority: "high"
+  memory_pool: 2048  # MB dedicated for AI processing
+
+# Features Configuration
+features:
+  ai_tracker:
+    enabled: true
+    confidence_threshold: 0.3
+  ai_vision:
+    enabled: true
+    enhancement_level: 2
+  ai_scene:
+    enabled: true
+    detection_interval: 100
+  ai_goggle:
+    enabled: true
+    flash_protection: true
+  ai_scope:
+    enabled: true
+    zoom_level: 2
+  ai_gauge:
+    enabled: true
+    ocr_enabled: false
+  voice_control:
+    enabled: false
+    language: "en-US"
+
+# AI Tracker Settings (MSI Gaming Intelligence)
+ai_tracker:
+  enabled: true
+  confidence_threshold: 0.3  # MSI optimized for gaming
+  highlight_color: [0, 255, 255]  # MSI Cyan
+  highlight_thickness: 2
+  model: "gamemate_gaming_detector.onnx"  # GameMate custom model
+  detect_classes: ["enemy_player", "teammate", "weapon", "loot"]
+  game_profiles:
+    valorant:
+      confidence: 0.4
+      classes: ["enemy_head", "enemy_body"]
+    csgo:
+      confidence: 0.35
+      classes: ["enemy_player", "bomb"]
+    apex_legends:
+      confidence: 0.3
+      classes: ["enemy", "loot_box", "shield"]
+    fortnite:
+      confidence: 0.25
+      classes: ["enemy_player", "loot_chest", "weapon", "shield_potion", "building"]
+      building_detection: true
+      storm_awareness: true
+  tracking_smoothing: 0.8
+  prediction_frames: 3
+
+# AI Vision+ Settings (MSI Visual Enhancement Engine)
+ai_vision:
+  enabled: true
+  brightness_algorithm: "gamemate_adaptive"  # GameMate proprietary
+  gamma_correction: 2.2
+  hdr_mapping: true
+  night_vision_mode: true
+  shadow_enhancement: 1.5
+  highlight_recovery: 0.8
+  color_temperature_adjust: 6500  # Kelvin
+  msaa_enhancement: true
+  temporal_filtering: true
+  edge_preservation: 0.9
+
+# AI Scene Settings
+ai_scene:
+  enabled: false
+  auto_detect: true
+  modes:
+    fps: 
+      brightness: 1.1
+      contrast: 1.3
+      saturation: 1.0
+    moba:
+      brightness: 1.2
+      contrast: 1.1
+      saturation: 1.1
+    rpg:
+      brightness: 1.0
+      contrast: 1.0
+      saturation: 1.2
+
+# AI Goggle Settings
+ai_goggle:
+  enabled: false
+  flash_threshold: 200  # Brightness level to trigger
+  recovery_speed: 0.3
+  darkness_compensation: 1.5
+
+# AI Scope Settings
+ai_scope:
+  enabled: false
+  zoom_level: 1.5
+  zoom_area_size: 400  # pixels
+  follow_crosshair: true
+  smooth_tracking: true
+
+# AI Gauge Settings
+ai_gauge:
+  enabled: false
+  ocr_regions:
+    health: [10, 10, 150, 50]  # x, y, width, height
+    ammo: [10, 60, 150, 50]
+  update_interval: 0.5  # seconds
+
+# Voice Control Settings
+voice_control:
+  enabled: false
+  language: "en-US"
+  wake_word: "hey assistant"
+  commands:
+    - phrase: "tracker on"
+      action: "enable_tracker"
+    - phrase: "tracker off"
+      action: "disable_tracker"
+    - phrase: "vision on"
+      action: "enable_vision"
+    - phrase: "vision off"
+      action: "disable_vision"
+    - phrase: "scope zoom"
+      action: "enable_scope"
+
+# Keyboard Shortcuts
+hotkeys:
+  toggle_tracker: "ctrl+1"
+  toggle_vision: "ctrl+2"
+  toggle_scene: "ctrl+3"
+  toggle_goggle: "ctrl+4"
+  toggle_scope: "ctrl+5"
+  toggle_gauge: "ctrl+6"
+  exit: "ctrl+q"
+
+# Performance Settings
+performance:
+  use_gpu: true
+  max_cpu_usage: 50  # percentage
+  screen_capture_region: null  # null for full screen, or [x, y, width, height]
+  downscale_factor: 1.0  # Reduce for better performance
+
+# Game Profiles & Detection Settings
+games:
+  fortnite:
+    enabled: true
+    process_name: "FortniteClient-Win64-Shipping.exe"
+    window_title: "Fortnite"
+    confidence_threshold: 0.25
+    detection_classes: ["enemy_player", "loot_chest", "weapon", "shield_potion", "building"]
+    features:
+      building_detection: true
+      storm_awareness: true
+      aim_assist: false
+  valorant:
+    enabled: true
+    process_name: "VALORANT-Win64-Shipping.exe"
+    window_title: "VALORANT"
+    confidence_threshold: 0.4
+    detection_classes: ["enemy_head", "enemy_body"]
+  csgo:
+    enabled: true
+    process_name: "csgo.exe"
+    window_title: "Counter-Strike: Global Offensive"
+    confidence_threshold: 0.35
+    detection_classes: ["enemy_player", "bomb"]
+  apex_legends:
+    enabled: true
+    process_name: "r5apex.exe"
+    window_title: "Apex Legends"
+    confidence_threshold: 0.3
+    detection_classes: ["enemy", "loot_box", "shield"]
+
+# AI Settings
+ai_settings:
+  model_path: "models/"
+  inference_device: "gpu"  # gpu, cpu, or auto
+  batch_size: 1
+  max_detections: 100
+  nms_threshold: 0.45
+  confidence_threshold: 0.25
+  input_resolution: [640, 640]
+  use_tensorrt: false
+  use_onnx: true

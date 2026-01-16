@@ -1,0 +1,30 @@
+description: Competitive FPS settings for CS2
+executables:
+- cs2.exe
+- csgo.exe
+name: Counter-Strike 2
+settings:
+  ai_goggle:
+    adaptive_brightness: true
+    enabled: true
+    flash_protection: 0.95
+  ai_tracker:
+    confidence_threshold: 0.85
+    enabled: true
+    model: yolo11s
+    sound_visualization: true
+    track_grenades: true
+    track_players: true
+  ai_vision:
+    brightness_boost: 1.2
+    contrast_boost: 1.3
+    enabled: true
+    smoke_penetration: true
+  performance:
+    fps_limit: 300
+    gpu_optimization: true
+    input_optimization: true
+    priority: high
+window_titles:
+- Counter-Strike 2
+- 'Counter-Strike: Global Offensive'

@@ -1,0 +1,28 @@
+description: Battle royale optimization for Apex
+executables:
+- r5apex.exe
+name: Apex Legends
+settings:
+  ai_scope:
+    enabled: true
+    scope_assistance: true
+    zoom_factor: 1.5
+  ai_tracker:
+    confidence_threshold: 0.75
+    enabled: true
+    model: yolo11m
+    third_party_detection: true
+    track_loot: true
+    track_players: true
+  ai_vision:
+    brightness_boost: 1.25
+    contrast_boost: 1.15
+    enabled: true
+    legend_ability_highlight: true
+  performance:
+    fps_limit: 144
+    gpu_optimization: true
+    prediction_optimization: true
+    priority: high
+window_titles:
+- Apex Legends

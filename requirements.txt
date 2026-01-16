@@ -1,0 +1,24 @@
+torch>=2.7.1
+torchvision>=0.22.1
+torchaudio>=2.7.1
+--extra-index-url https://download.pytorch.org/whl/cu118
+opencv-python==4.8.1.78
+numpy==1.26.4
+pyyaml
+pillow
+colorama
+psutil
+ultralytics
+onnxruntime-gpu>=1.15.1
+nvidia-ml-py
+pynvml
+numba
+cupy-cuda11x
+pywin32
+pyautogui
+pytesseract
+SpeechRecognition
+keyboard
+scipy
+scikit-learn
+semantic-version

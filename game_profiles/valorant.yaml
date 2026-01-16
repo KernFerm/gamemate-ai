@@ -1,0 +1,29 @@
+description: Tactical FPS optimization for Valorant
+executables:
+- VALORANT-Win64-Shipping.exe
+- Valorant.exe
+name: Valorant
+settings:
+  ai_goggle:
+    enabled: true
+    flash_protection: 0.9
+    smoke_clarity: true
+  ai_tracker:
+    confidence_threshold: 0.9
+    crosshair_detection: true
+    enabled: true
+    model: yolo11m
+    track_players: true
+    track_weapons: true
+  ai_vision:
+    brightness_boost: 1.1
+    contrast_boost: 1.4
+    enabled: true
+    enemy_highlighting: true
+  performance:
+    fps_limit: 120
+    gpu_optimization: true
+    latency_optimization: true
+    priority: realtime
+window_titles:
+- VALORANT

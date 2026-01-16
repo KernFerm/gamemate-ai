@@ -1,0 +1,23 @@
+description: Generic gaming profile for unknown games
+executables:
+- '*'
+name: Default Profile
+settings:
+  ai_goggle:
+    enabled: false
+  ai_scope:
+    enabled: false
+  ai_tracker:
+    confidence_threshold: 0.7
+    enabled: true
+    model: yolo11n
+  ai_vision:
+    brightness_boost: 1.1
+    contrast_boost: 1.1
+    enabled: true
+  performance:
+    fps_limit: 60
+    gpu_optimization: true
+    priority: normal
+window_titles:
+- '*'

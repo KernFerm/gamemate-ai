@@ -1,0 +1,33 @@
+description: Optimized for Fortnite Battle Royale
+executables:
+- FortniteClient-Win64-Shipping.exe
+- FortniteLauncher.exe
+name: Fortnite
+settings:
+  ai_goggle:
+    enabled: true
+    explosion_dampening: true
+    flash_protection: 0.7
+  ai_scope:
+    auto_zoom: true
+    enabled: true
+    zoom_factor: 2.0
+  ai_tracker:
+    confidence_threshold: 0.8
+    enabled: true
+    model: yolo11s
+    track_players: true
+    track_vehicles: false
+    track_weapons: true
+  ai_vision:
+    brightness_boost: 1.3
+    contrast_boost: 1.2
+    enabled: true
+    storm_clarity: true
+    visibility_enhancement: true
+  performance:
+    fps_limit: 60
+    gpu_optimization: true
+    priority: high
+window_titles:
+- Fortnite

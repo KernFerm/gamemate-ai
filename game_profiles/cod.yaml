@@ -1,0 +1,31 @@
+description: COD series optimization
+executables:
+- ModernWarfare.exe
+- BlackOpsColdWar.exe
+- cod.exe
+name: Call of Duty
+settings:
+  ai_goggle:
+    enabled: true
+    flash_protection: 0.8
+    stun_protection: true
+  ai_tracker:
+    confidence_threshold: 0.8
+    enabled: true
+    killstreak_detection: true
+    model: yolo11s
+    track_players: true
+  ai_vision:
+    brightness_boost: 1.3
+    contrast_boost: 1.2
+    enabled: true
+    muzzle_flash_reduction: true
+  performance:
+    fps_limit: 120
+    gpu_optimization: true
+    network_optimization: true
+    priority: high
+window_titles:
+- Call of Duty
+- Modern Warfare
+- Black Ops
