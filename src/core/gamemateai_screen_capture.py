@@ -55,7 +55,7 @@ class RECT(ctypes.Structure):
 
 
 class GameMateScreenCapture:
-    """MSI-style hardware-accelerated screen capture"""
+    """GameMate-style hardware-accelerated screen capture"""
     
     def __init__(self, config):
         self.config = config
@@ -137,7 +137,7 @@ class GameMateScreenCapture:
             return frame
             
         except Exception as e:
-            logger.error(f"MSI screen capture error: {e}")
+            logger.error(f"GameMate screen capture error: {e}")
             return None
     
     def _create_bitmap_header(self):
@@ -277,4 +277,5 @@ class GameMateScreenCapture:
         if hasattr(self, 'bitmap'):
             self.gdi32.DeleteObject(self.bitmap)
         if hasattr(self, 'monitor_handle'):
+
             self.user32.ReleaseDC(0, self.monitor_handle)
