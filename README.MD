@@ -115,6 +115,11 @@ Configuration is handled via `config.yaml`.
 
 Per‑application profiles are stored in `game_profiles/`.
 
+
+## Nvidia Cuda Toolkit 
+
+- > Tested on 11.8 cuda with cudnn 8.9.6
+
 ---
 
 ## Supported Profiles
