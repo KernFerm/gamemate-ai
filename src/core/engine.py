@@ -1,6 +1,5 @@
 """
-GameMate AI Engine - Hardware Optimized
-
+GameMate Gaming AI Engine - Hardware Optimized
 """
 
 import time
@@ -11,6 +10,33 @@ from typing import Dict, Any
 import numpy as np
 import ctypes
 import importlib
+
+
+# Robust logger import that works in both package and standalone contexts
+try:
+    from ..utils.logger import get_logger
+    from ..utils.memory_optimizer import memory_optimizer
+except ImportError:
+    # Fallback for standalone execution
+    import sys
+    import os
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+    try:
+        from utils.logger import get_logger
+        from utils.memory_optimizer import memory_optimizer
+    except ImportError:
+        # Ultimate fallback
+        import logging
+        def get_logger(name):
+            return logging.getLogger(name)
+        # Fallback memory optimizer
+        class FallbackMemoryOptimizer:
+            def start_auto_cleanup(self): pass
+            def stop_auto_cleanup(self): pass
+            def gentle_cleanup(self): pass
+        memory_optimizer = FallbackMemoryOptimizer()
+
+logger = get_logger(__name__)
 
 # Optional GPU monitoring - graceful fallback if not available  
 pynvml = None
@@ -44,9 +70,9 @@ except ImportError:
     MSIAITracker = None
 
 try:
-    from ..features.gamemate_visual_engine import MSIVisualEngine
+    from ..features.gamemate_visual_engine import GameMateAIVisualEngine
 except ImportError:
-    MSIVisualEngine = None
+    GameMateAIVisualEngine = None
 
 # Import remaining features with fallbacks
 try:
@@ -118,8 +144,8 @@ except ImportError:
 logger = get_logger(__name__)
 
 
-class MSIGamingEngine:
-    """MSI Gaming AI Engine with hardware optimization"""
+class GameMateEngine:
+    """GameMate Gaming AI Engine with hardware optimization"""
     
     def __init__(self, config: Dict[str, Any]):
         self.config = config
@@ -148,7 +174,7 @@ class MSIGamingEngine:
         self.frame_lock = threading.Lock()
     
     def _init_nvidia_monitoring(self):
-        """Initialize NVIDIA GPU monitoring for GameMate AI Assistant optimization"""
+        """Initialize NVIDIA GPU monitoring for Optimization"""
         try:
             if pynvml is None:
                 logger.warning("pynvml not available - GPU monitoring disabled")
@@ -161,7 +187,7 @@ class MSIGamingEngine:
             # Handle both string and bytes return types
             if isinstance(gpu_name, bytes):
                 gpu_name = gpu_name.decode('utf-8')
-            logger.info(f"MSI Gaming GPU detected: {gpu_name}")
+            logger.info(f"Gaming GPU detected: {gpu_name}")
         except Exception as e:
             logger.warning(f"NVIDIA monitoring unavailable: {e}")
             self.gpu_handle = None
@@ -209,10 +235,10 @@ class MSIGamingEngine:
         return frame
         
     def initialize(self):
-        """Initialize MSI gaming components"""
-        logger.info("Initializing GameMate AI Engine...")
+        """Initialize GameMate gaming components"""
+        logger.info("Initializing GameMate Gaming AI Engine...")
         
-        # Initialize MSI screen capture with fallback
+        # Initialize GameMate screen capture with fallback
         if GameMateScreenCapture:
             try:
                 self.screen_capture = GameMateScreenCapture(self.config)
@@ -224,28 +250,28 @@ class MSIGamingEngine:
             logger.info("GameMate screen capture not available, using fallback")
             self.screen_capture = FallbackScreenCapture(self.config)
         
-        # Initialize MSI gaming features with fallbacks
+        # Initialize GameMate gaming features with fallbacks
         if self.config['ai_tracker']['enabled']:
-            logger.info("Loading MSI Gaming AI Tracker...")
+            logger.info("Loading GameMate Gaming AI Tracker...")
             if MSIAITracker:
                 try:
                     self.features['tracker'] = MSIAITracker(self.config['ai_tracker'])
-                    logger.info("GameMate AI Tracker loaded successfully")
+                    logger.info("GameMate Gaming AI Tracker loaded successfully")
                 except Exception as e:
-                    logger.warning(f"GameMate AI Tracker failed, using fallback: {e}")
+                    logger.warning(f"GameMate Gaming AI Tracker failed, using fallback: {e}")
                     self.features['tracker'] = FallbackAITracker(self.config['ai_tracker'])
             else:
-                logger.info("GameMate AI Tracker not available, using fallback")
+                logger.info("GameMate Gaming AI Tracker not available, using fallback")
                 self.features['tracker'] = FallbackAITracker(self.config['ai_tracker'])
             
         if self.config['ai_vision']['enabled']:
             logger.info("Loading GameMate Visual Enhancement Engine...")
-            if MSIVisualEngine:
+            if GameMateAIVisualEngine:
                 try:
-                    self.features['vision'] = MSIVisualEngine(self.config['ai_vision'])
+                    self.features['vision'] = GameMateAIVisualEngine(self.config['ai_vision'])
                     logger.info("GameMate Visual Engine loaded successfully")
                 except Exception as e:
-                    logger.warning(f"MSI Visual Engine failed, using fallback: {e}")
+                    logger.warning(f"GameMate Visual Engine failed, using fallback: {e}")
                     self.features['vision'] = FallbackVisualEngine(self.config['ai_vision'])
             else:
                 logger.info("GameMate Visual Engine not available, using fallback")
@@ -398,5 +424,4 @@ class MSIGamingEngine:
                 feature.toggle()
                 logger.info(f"Toggled {feature_name}")
         else:
-
             logger.warning(f"Feature {feature_name} not found")
