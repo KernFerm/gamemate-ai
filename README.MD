@@ -33,9 +33,6 @@ All features are **opt‑in**, **user‑controlled**, and designed to respect pl
 * **Performance Monitoring**
   Real‑time tracking of FPS, CPU/GPU usage, memory usage, temperatures, and application health.
 
-* **Crash Reporting**
-  Automatic capture of crash logs and diagnostic information for troubleshooting.
-
 * **Privacy Controls**
   Local‑only data handling with user‑managed logging and retention settings.
 
