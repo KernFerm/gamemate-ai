@@ -94,9 +94,14 @@ GameMate AI **never interacts with game input or internal game data**.
 4. Run the application:
 
    ```bash
-   python main.py
+   run the run_gamemateai_launcher.bat runs the UI
    ```
 
+```
+to run the console version 
+
+python start_gamemateai.py
+```
 ---
 
 ## Configuration
